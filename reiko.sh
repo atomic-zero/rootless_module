@@ -691,4 +691,94 @@ settings_system=(
 "touch.distance.calibration none"
 "touch.distance.scale 1"
 "touch.coverage.calibration none"
-"HW_
+"HW_NETWORKMODE_PREFERENCE 11"
+"hw_networkmode_preference 11"
+)
+
+set_tweaks() {
+  for compile in "${settings_package[@]}"; do
+    cmd package "$compile" com.android.systemui
+    done
+  for debug in "${settings_debug[@]}"; do
+    setprop debug."$debug"
+    done 
+  for devconfig in "${settings_devconfig[@]}"; do
+    cmd device_config put "$devconfig"
+    done 
+  for system in "${settings_system[@]}"; do
+    settings put system "$system"
+  done
+  for global in "${settings_global[@]}"; do
+    settings put global "$global"
+  done
+  for secure in "${settings_secure[@]}"; do
+    settings put secure "$secure"
+  done
+  #Uninstall Unwanted Apps
+  for bloatware in "${settings_bloatware[@]}"; do
+      pm uninstall -k --user 0 "$bloatware"
+  done
+  #PREVENT SERVICE RUNNING FROM BACKGROUND
+  for stop in "${settings_bloatware_service[@]}"; do
+      cmd appops set "$stop" RUN_IN_BACKGROUND ignore
+      cmd appops set "$stop" RUN_ANY_IN_BACKGROUND ignore
+      cmd appops set "$stop" START_FOREGROUND ignore
+      cmd appops set "$stop" INSTANT_APP_START_FOREGROUND ignore
+      am force-stop "$stop"
+  done
+  packages=$(pm list packages -3 | cut -d ":" -f 2)
+  opt_in_apps=""
+  for package in $packages; do
+  if [ "$package" != "me.piebridge.brevent" ]; then
+    am force-stop "$package" 
+    cmd game mode performance "$package"
+    cmd device_config put game_overlay "$package" mode=2,fps=60,downscaleFactor=0.7
+    cmd device_config put game_overlay "$package" mode=2,downscaleFactor=0.7
+    device_config put game_overlay "$package" mode=2,downscaleFactor=0.7
+   opt_in_apps+="$package,"
+    fi
+done
+   #Game Driver opt_in, Graphics System Driver opt_out , Developer Driver prerelease_opt_in
+   opt_in_apps=${opt_in_apps%,}
+   settings put global game_driver_opt_in_apps "$opt_in_apps"
+   cmd thermalservice override-status 0
+   cmd power set-fixed-performance-mode-enabled true
+   service call uimode 1
+   # dumpsys battery set level 1000 || dumpsys battery reset
+   pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS
+}
+
+sleep 3s
+echo "[+] Installing Modules!"
+sleep 1s
+echo "[+] Increasing Performance"
+sleep 0.5s
+echo "[+] Improving Max Framerate"
+sleep 0.5s
+echo "[+] Disabling Throttling"
+sleep 2s
+echo "[+] Optimizing Device"
+sleep 1s
+echo "[+] Removing Bloatwares"
+sleep 0.5s
+echo "[+] Killing Background Service"
+sleep 0.5s
+echo "[+] Applying Game Drivers"
+sleep 0.5s
+echo "[+] Improving Touch Response"
+sleep 0.5s
+echo "[+] Softening Touch Movement"
+sleep 0.5s
+echo "[+] Optimizing Touch Sensitivity"
+(set_tweaks > /dev/null 2>&1 && echo "[!] Done!") || echo "[!] Failure!"
+
+sleep 1s
+echo "[!] Performance Mode!"
+sleep 1s
+echo "[!] Improved Gaming Experience!"
+echo "[!] Do not reboot!"
+echo ""
+
+cmd notification post -S bigtext 'status' "[+] PERFORMANCE MODE [+]" > /dev/null 2>&1
+sleep 10s
+am start -a android.intent.action.VIEW -d "https://www.facebook.com/reiko.dev" > /dev/null 2>&1
