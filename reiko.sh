@@ -1,94 +1,124 @@
 #!/system/bin/sh
 echo ""
+echo "[]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[]"
 echo " ____  _____ ___ _  _____    ____  _______     __"
 echo "|  _ \| ____|_ _| |/ / _ \  |  _ \| ____\ \   / /"
-echo "| |_) |  _|  | || ' / | | | | | | |  _|  \ \ / /" 
-echo "|  _ <| |___ | || . \ |_| | | |_| | |___  \ V /"  
+echo "| |_) |  _|  | || ' / | | | | | | |  _|  \ \ / /"
+echo "|  _ <| |___ | || . \ |_| | | |_| | |___  \ V /"
 echo "|_| \_\_____|___|_|\_\___/  |____/|_____|  \_/"
 echo ""
-echo " ► Github: reiko_dev"
-echo " ► Tiktok: ezekael"
-echo " ► Telegram: https://t.me/hackersdecipher"
+echo " • Github: reiko_dev"
+echo " • Tiktok: ezekael"
+echo " • Telegram: https://t.me/hackersdecipher"
+echo " • Version: 1.4"
+echo "[]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[]"
+echo " • Changelogs:"
+echo ""
+echo "    Added Auto Clear Cache"
+echo "    (Clear Cache all Applications)"
+echo ""
+echo "    Turned Off/On ZRAM"
+echo "    (Might Work Not Tested Yet Some device Needs Root.)"
+echo ""
+echo "    Added Private DNS Adblocker."
+echo "    (7.24% effectiveness)"
+echo ""
+echo "    Added SystemUI Speed Compiler."
+echo "    (It will help speed up your phone.)"
+echo ""
+echo "    Push CPU and GPU limit to maximum performance."
+echo "    (Enchance Gaming Module)"
+echo ""
+echo " • Known Bugs & Issues:"
+echo ""
+echo "    Game Driver Not Work on other device"
+echo "    (Fixed)"
+echo ""
+echo "    Faster Battery Draining and heating issues."
+echo "    (experienced by some users)"
+echo ""
+echo "    Slow charging when the phone is being used while running tasks."
+echo "    (Fixed)"
+echo ""
+echo "    Wallpaper Crashed on xiaomi device."
+echo "    (Partially fixed)"
+echo ""
+echo "    Touch Not Working on samsung device"
+echo "    (Might occur on other devices too)"
 echo ""
 expiration_date="2024-4-15"
 current_date=$(date +%Y-%m-%d)
 if [ "$current_date" \> "$expiration_date" ]; then
-    echo "This script has expired."
-    echo "Please contact the script"
-    echo "provider for a new version."
-    sleep 4s
-am start -a android.intent.action.VIEW -d "https://t.me/hackersdecipher" > /dev/null 2>&1 
-    exit 1
+echo ""
+echo "This script has expired."
+echo "Please contact the script"
+echo "provider for a new version."
+sleep 4s
+am start -a android.intent.action.VIEW -d "https://t.me/hackersdecipher" > /dev/null 2>&1
+exit 1
 fi
 resolution() {
-    local screen_size="$1"
-    
-    if [ -z "$screen_size" ]; then
-        wm size reset
-    fi
-
-    if echo "$screen_size" | grep -Eq '^[0-9]+x[0-9]+$'; then
-        local width=$(echo "$screen_size" | cut -dx -f1)
-        local height=$(echo "$screen_size" | cut -dx -f2)
-        
-        if [ "$width" -ge 144 ] && [ "$height" -ge 328 ] && [ "$width" -le 720 ] && [ "$height" -le 1640 ]; then
-            wm size "$screen_size"
-        else
-            echo "Invalid screen size."
-            echo "Please provide a size"
-            echo "144x328 - 720x1640."
-            echo "<WidthxHeight>"
-            echo ""
-            exit 1
-        fi
-    else
-        echo "Invalid screen size format."
-        echo "Please provide a size in the format WidthxHeight."
-        echo ""
-        exit 1
-    fi
+  local screen_size="$1"
+  if [ -z "$screen_size" ]; then
+  wm size reset
+  fi
+  if echo "$screen_size" | grep -Eq '^[0-9]+x[0-9]+$'; then
+  local width=$(echo "$screen_size" | cut -dx -f1)
+  local height=$(echo "$screen_size" | cut -dx -f2)
+  if [ "$width" -ge 144 ] && [ "$height" -ge 328 ] && [ "$width" -le 720 ] && [ "$height" -le 1640 ]; then
+  wm size "$screen_size" 
+  else
+  echo ""
+  echo "Invalid screen size."
+  echo "Please provide a size"
+  echo "144x328 - 720x1640."
+  echo "<WidthxHeight>"
+  echo ""
+  exit 1
+  fi
+  else
+  echo ""
+  echo "Invalid screen size format."
+  echo "Please provide a size in the format WidthxHeight."
+  echo ""
+  exit 1
+  fi
 }
-
 if [ -n "$1" ]; then
-    resolution "$1"
+resolution "$1" 
 else
-    wm size reset
+wm size reset > /dev/null 2>&1
 fi
-sleep 1s
-echo " [+] 𝗥𝗢𝗢𝗧𝗟𝗘𝗦𝗦 𝗠𝗢𝗗𝗨𝗟𝗘 [+]"
-echo ""
+setprop debug.hwui.renderer vulkan > /dev/null 2>&1
+echo "[]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[]"
 echo " [!] Use this script at your own risk."
 echo "     I am not responsible for any issues"
-echo "     or damages in your device." 
+echo "     or damages in your device."
 echo "     Proceed with caution!"
 echo ""
 echo " [!] Optional: adjust screen size"
 echo "     <script>.sh <WidthxHeight>"
-echo ""
 sleep 4s
-echo " [+] 𝗗𝗘𝗩𝗜𝗖𝗘 [+] " 
-#Rendering Tweak
-setprop debug.hwui.renderer vulkan
+echo "[]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[]"
 sleep 1s
-echo " ► Name: $(getprop ro.product.model) " 
+echo "   • Name: $(getprop ro.product.model) "
 sleep 0.5s
-echo " ► Renderer: $(getprop debug.hwui.renderer) "
+echo "   • Renderer: $(getprop debug.hwui.renderer) "
 sleep 0.5s
-echo " ► GPU: $(getprop ro.hardware.egl) " 
+echo "   • GPU: $(getprop ro.hardware.egl) "
 sleep 0.5s
-echo " ► Chipset: $(getprop ro.board.platform) " 
+echo "   • Chipset: $(getprop ro.board.platform) "
 sleep 0.5s
-echo " ► Model: $(getprop ro.build.product) " 
+echo "   • Model: $(getprop ro.build.product) "
 sleep 0.5s
-echo " ► Kernel: $(uname -r) " 
+echo "   • Kernel: $(uname -r) "
 sleep 0.5s
-echo " ► Android: $(getprop ro.build.version.release) " 
+echo "   • Android: $(getprop ro.build.version.release) "
 sleep 0.5s
-echo " ► SDK: $(getprop ro.build.version.sdk) " 
+echo "   • SDK: $(getprop ro.build.version.sdk) "
 sleep 0.5s
-echo " ► Arch: $(getprop ro.product.cpu.abi) "
-echo ""
-
+echo "   • Arch: $(getprop ro.product.cpu.abi) "
+echo "[]━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[]"
 #Package Compiler Optimize your device packages
 settings_package=(
 "compile -m everything --secondary-dex -f"
@@ -120,8 +150,8 @@ settings_package=(
 "compile -r core-app reconcile-secondary-dex-files"
 "compile -r core-app --compile-layouts -f"
 "compile -r core-app --compile-layouts"
+"compile -m speed -f"
 )
-
 #bloatware remover
 settings_bloatware=(
 "com.trinetvpn.prov2"
@@ -155,11 +185,9 @@ settings_bloatware=(
 "com.rlk.weathers"
 "com.krazeapps.csharpprogrammingcompiler"
 "com.google.android.apps.youtube.music"
-"com.google.android.calendar"
 "com.talpa.hibrowser"
 "com.transsion.hiparty"
 "com.transsion.magazineservice.hios"
-"com.google.android.apps.nbu.files"
 "com.google.android.apps.photos"
 "com.zaz.translate"
 "com.transsion.phonemaster"
@@ -170,20 +198,14 @@ settings_bloatware=(
 "com.google.android.projection.gearhead"
 "com.transsion.plat.appupdate"
 "com.google.android.apps.googleassistant"
-"com.android.bbkcalculator"
-"com.android.BBKClock"
 "com.android.bbklog"
 "com.android.bbkmusic"
-"com.android.bbksoundrecorder"
 "com.bbk.account"
-"com.bbk.calendar"
 "com.bbk.cloud"
 "com.bbk.iqoo.logsystem"
 "com.bbk.photoframewidget"
 "com.bbk.scene.indoor"
 "com.bbk.SuperPowerSave"
-"com.bbk.theme"
-"com.bbk.theme.resources"
 "com.baidu.duersdk.opensdk"
 "com.baidu.input_vivo"
 "com.facebook.appmanager"
@@ -212,10 +234,7 @@ settings_bloatware=(
 "com.vivo.ewarranty"
 "com.vivo.appstore"
 "com.vivo.assistant"
-"com.vivo.compass"
 "com.vivo.doubleinstance"
-"com.vivo.doubletimezoneclock"
-"com.vivo.dream.clock"
 "com.vivo.dream.music"
 "com.vivo.dream.weather"
 "com.vivo.easyshare"
@@ -238,7 +257,6 @@ settings_bloatware=(
 "com.vivo.pushservice"
 "com.vivo.safecentercom.vivo.scanner"
 "com.vivo.setupwizard"
-"com.vivo.sim.contacts"
 "com.vivo.smartmultiwindow"
 "com.vivo.smartshot"
 "com.vivo.translator"
@@ -249,11 +267,9 @@ settings_bloatware=(
 "com.vivo.weather.provider"
 "com.vivo.website"
 "com.vivo.widget.calendar"
-"com.vlife.vivo.wallpaper"
 "com.kikaoem.vivo.qisiemoji.inputmethod"
 "com.android.bips"
 "com.android.bookmarkprovider"
-"com.android.calendar"
 "com.android.cellbroadcastreceiver"
 "com.android.cellbroadcastreceiver.overlay.common"
 "com.android.dreams.basic"
@@ -264,8 +280,6 @@ settings_bloatware=(
 "com.android.statementservice"
 "com.android.stk"
 "com.android.email"
-"com.android.thememanager"
-"com.android.wallpaper.livepicker"
 "com.netflix.partner.activation"
 "com.miui.weather2"
 "com.miui.yellowpage"
@@ -285,14 +299,12 @@ settings_bloatware=(
 "com.xiaomi.providers.appindex"
 "com.xiaomi.xmsf"
 "com.miui.providers.weather"
-"com.miui.screenrecorder"
 "com.miui.translationservice"
 "com.miui.translation.kingsoft"
 "com.miui.translation.xmcloud"
 "com.miui.translation.youdao"
 "com.miui.touchassistant"
 "com.miui.userguide"
-"com.mfashiongallery.emag"
 "com.mi.android.globalpersonalassistant"
 "com.mi.dlabs.vr"
 "com.mi.globalTrendNews"
@@ -304,7 +316,6 @@ settings_bloatware=(
 "com.mipay.wallet.id"
 "com.mipay.wallet.in"
 "com.miui.analytics"
-"com.miui.android.fashiongallery"
 "com.miui.bugreport"
 "com.miui.cloudbackup"
 "com.miui.cloudservice"
@@ -314,11 +325,8 @@ settings_bloatware=(
 "com.miui.hybrid.accessory"
 "com.miui.klo.bugreport"
 "com.miui.miservice"
-"com.miui.miwallpaper"
 "com.miui.msa.global"
 "com.sohu.inputmethod.sogou.xiaomi"
-"com.xiaomi.account"
-"com.xiaomi.calendar"
 "com.xiaomi.discover"
 "com.xiaomi.channel"
 "com.xiaomi.joyose"
@@ -334,9 +342,26 @@ settings_bloatware=(
 "com.xiaomi.mirror"
 "com.xiaomi.simactivate.service"
 )
-
 #Prevent running in background Unwanted Services
 settings_bloatware_service=(
+"com.nglreactnative"
+"omegle.tv"
+"com.scathachgrip.enikk"
+"com.instagram.barcelona"
+"ru.ipydpzox.ztctqsirf"
+"com.bstar.intl"
+"com.discord"
+"com.zhiliaoapp.musically"
+"com.ss.android.ugc.trill"
+"org.torproject.torbrowser"
+"com.shopee.ph"
+"omegle.tv"
+"com.proximabeta.nikke"
+"com.google.earth"
+"com.dubox.drive"
+"com.bluecord"
+"com.instagram.android"
+"com.twitter.android"
 "com.google.android.ims"
 "com.google.android.gms"
 "com.facebook.katana"
@@ -352,7 +377,6 @@ settings_bloatware_service=(
 "com.google.android.gms/com.google.android.location.fused.FusedLocationService" 
 "com.google.android.gms/com.google.android.location.fused.service.FusedProviderService"
 )
-
 settings_debug=(
 "qti.am.resource.type super-large"
 "hwui.renderer.buffer dynamic-loadmulticore"
@@ -532,7 +556,6 @@ settings_debug=(
 "game.fps.engine.type max-perf"
 "game.texture.compression.type bc4"
 "game.occlusionquery.type cuda"
-"game.shadow.technique.type pcf2×2"
 "game.sun.imposter.type screen-aligned"
 "game.texture.filter.engine.type compile-mipmap"
 "game peformance"
@@ -575,7 +598,6 @@ settings_debug=(
 "thermal_zone.cpu_hotplug_control 2"
 "thermal_zone.gpu_hotplug_control 2"
 )
-
 #secure tweaks
 settings_secure=(
 "long_press_timeout 100"
@@ -591,13 +613,30 @@ settings_secure=(
 "tap_duration_enabled 1"
 "tap_duration_threshold 125"
 "tap_exploration_enabled 1"
+"min_refresh_rate 120"
+"peak_refresh_rate 120"
+"max_refresh_rate 120"
+"tap_duration_threshold 0.0"
+"touch_blocking_period 0.0"
 )
-
 #Global Tweaks
 settings_global=(
+"zram_enabled 0"
+"game_driver_fps_overlay_enabled 1"
+"game_driver 1"
+"game_driver_all_apps 1"
+"game_driver_opt_in 1"
+"game_driver_opti 1"
+"game_driver_optimal_frames 1"
+"game_driver_optimalization 1"
+"game_gpu_optimizing 1"
+"game_hd_mode 1"
+"game_hdr_mode 1"
+"game_home_enable 1"
+"game_low_latency_mode 1"
+"ram_expand_size 0"
+"allow.fast.charging 1"
 "net_speed_on_off 1"
-"private_dns_mode strict"
-"private_dns_specifier dns.adguard.com"
 "foreground_mem_priority high"
 "performance.cache_size 360"
 "mem_performance 1"
@@ -635,8 +674,74 @@ settings_global=(
 "windowsmgr.max_events_per_sec 180"
 "fstrim_mandatory_interval 86400000"
 "tcp_congestion_control cubic"
+"transsion_game_mode 1"
+"transsion_game_mode_refuse_call 1"
+"transsion_game_mode_not_interrupt 1"
+"transsion_game_picture_optimization 1"
+"transsion_game_acceleration 1"
+"transsion_game_changer 1"
+"transsion_game_changer_type 4"
+"preferred_network_mode 9,9"
+"wifi_to_mobile_rat_switch 1"
+"tcp_default_init_rwnd 2560"
+"tcp_default_init_cwnd 60"
+"location_mode 0"
+"wifi_scan_interval 180"
+"lte_category 4"
+"background_data 1"
+"wifi_sleep_policy 2"
+"dual_ip_type 0"
+"wifi_tcp_default_init_rwnd 2560"
+"wifi_tcp_default_init_cwnd 60"
+"mobile_data_always_on 1"
+"mobile_network_latency_normal 75"
+"mobile_network_latency_faster 50"
+"mobile_network_latency_slow 100"
+"network_avoid_bad_wifi 1"
+"network_avoid_bad_wifi_interval 3600"
+"network_avoid_bad_wifi_threshold 50"
+"gprs_reconnect_alarm_period 30000"
+"data_roaming_settings 0"
+"data_roaming_int 0"
+"wifi_watchdog_connectivity_check_interval_ms 15000"
+"wifi_watchdog_active_mode 1"
+"radio_bounce 1"
+"radio_time_out 10"
+"gprs_attach_retry_timeout 30"
+"gprs_retry_period 30"
+"wifi_scan_always_enabled 1"
+"data_roaming 1"
+"wimax_networks_transition_timeout 4"
+"network_notification_rate_limit 10"
+"tcp_syn_retries 2"
+"wifi_aggressive_handover 1"
+"background_data 1"
+"wifi_suspend_optimizations_enabled 0"
+"wifi_scan_background_throttle_interval_ms 0"
+"haptic_feedback_intensity 0"
+"package_verifier_enable 0"
+"doze_enabled 1"
+"game_mode_enable 1"
+"ipv4_route_enable 1"
+"ipv6_route_enable 1"
+"wifi_fast_reconnect 1"
+"wifi_watchdog_optimize_inet 1"
+"wifi_watchdog_roaming 1"
+"mobile_data_protocol_opt 1"
+"tcp_fastopen_enabled 0"
+"mobile_data_keepalive_enabled 0"
+"min_refresh_rate 120"
+"peak_refresh_rate 120"
+"max_refresh_rate 120"
+"hotword_detection_enabled 0"
+"galaxy_system_update_block"
+"network_scoring_ui_enabled"
+"private_dns_mode hostname"
+"private_dns_specifier family.adguard-dns.com"
+"private_dns_mode on"
+"mobile_icc_operator_numeric0 51502"
+"mobile_data_always_online1 1"
 )
-
 #Dev Tweaks
 settings_devconfig=(
 "thermal cpu_threshold 80000"
@@ -650,16 +755,16 @@ settings_devconfig=(
 "jobscheduler optimization_disabled true"
 "sysui/composer type auto"
 )
-
 #SYSTEM TWEAKS
 settings_system=(
+"allow.fast.charging 1"
+"sound_effects_enabled 0"
 "thread_priority highest"
 "asset_atlas_background_creation 1"
 "cpu_max_temp 110"
 "persist.perf.cores 8"
 "nearby_scanning_permission_allowed 0"
 "touch.surface_flinger.calibration physical"
-"touch.input_flinger.calibration physical"
 "view.scroll_friction 10"
 "pointer_speed 7"
 "vibrate_on 0"
@@ -672,113 +777,102 @@ settings_system=(
 "screen_mode_setting 0"
 "touch.pressure.scale 0.001"
 "windowsmgr.max_events_per_sec 180"
-"touch.deviceType touchScreen"
-"touch.orientationAware 1"
-"touch.gestureMode spots"
 "MultitouchMinDistance 0px"
 "MultitouchSettleInterval 0.2ms"
 "TapInterval 0.3ms"
 "TapSlop 0px"
-"view.touch_slop 2"
-"touch.size.calibration=area"
 "touch.size.scale 1.2"
 "touch.size.bias -10.0"
 "touch.size.isSummed 0"
 "touch.toolSize.isSummed 0"
-"touch.filter.level 1"
 "touch.pressure.calibration physical"
 "touch.orientation.calibration linterpolated"
-"touch.distance.calibration none"
 "touch.distance.scale 1"
-"touch.coverage.calibration none"
-"HW_NETWORKMODE_PREFERENCE 11"
-"hw_networkmode_preference 11"
+"HW_NETWORKMODE_PREFERENCE 9,3,2,1,11"
+"hw_networkmode_preference 9,3,2,1,11"
+"min_refresh_rate 120"
+"peak_refresh_rate 120"
+"max_refresh_rate 120"
+"tube_amp_effect 1"
+"k2hd_effect 1"
 )
 
 set_tweaks() {
   for compile in "${settings_package[@]}"; do
-    cmd package "$compile" com.android.systemui
-    done
+    cmd package ${compile} com.android.systemui > /dev/null 2>&1
+  done
   for debug in "${settings_debug[@]}"; do
-    setprop debug."$debug"
-    done 
+    setprop debug.${debug} > /dev/null 2>&1
+  done
   for devconfig in "${settings_devconfig[@]}"; do
-    cmd device_config put "$devconfig"
-    done 
+    cmd device_config put ${devconfig} > /dev/null 2>&1
+  done
   for system in "${settings_system[@]}"; do
-    settings put system "$system"
+    settings put system ${system} > /dev/null 2>&1
   done
   for global in "${settings_global[@]}"; do
-    settings put global "$global"
+    settings put global ${global} > /dev/null 2>&1
   done
   for secure in "${settings_secure[@]}"; do
-    settings put secure "$secure"
+    settings put secure ${secure} > /dev/null 2>&1
   done
   #Uninstall Unwanted Apps
   for bloatware in "${settings_bloatware[@]}"; do
-      pm uninstall -k --user 0 "$bloatware"
+    pm uninstall -k --user 0 "${bloatware}" > /dev/null 2>&1
   done
   #PREVENT SERVICE RUNNING FROM BACKGROUND
   for stop in "${settings_bloatware_service[@]}"; do
-      cmd appops set "$stop" RUN_IN_BACKGROUND ignore
-      cmd appops set "$stop" RUN_ANY_IN_BACKGROUND ignore
-      cmd appops set "$stop" START_FOREGROUND ignore
-      cmd appops set "$stop" INSTANT_APP_START_FOREGROUND ignore
-      am force-stop "$stop"
+    cmd appops set "${stop}" RUN_IN_BACKGROUND ignore > /dev/null 2>&1
+    cmd appops set "${stop}" RUN_ANY_IN_BACKGROUND ignore > /dev/null 2>&1
+    cmd appops set "${stop}" START_FOREGROUND ignore > /dev/null 2>&1
+    cmd appops set "${stop}" INSTANT_APP_START_FOREGROUND ignore > /dev/null 2>&1
   done
   packages=$(pm list packages -3 | cut -d ":" -f 2)
   opt_in_apps=""
   for package in $packages; do
-  if [ "$package" != "me.piebridge.brevent" ]; then
-    am force-stop "$package" 
-    cmd game mode performance "$package"
-    cmd device_config put game_overlay "$package" mode=2,fps=60,downscaleFactor=0.7
-    cmd device_config put game_overlay "$package" mode=2,downscaleFactor=0.7
-    device_config put game_overlay "$package" mode=2,downscaleFactor=0.7
-   opt_in_apps+="$package,"
+    if [ "$package" != "me.piebridge.brevent" ]; then
+        am force-stop ${package} > /dev/null 2>&1
+        pm clear ${package}
+        #cmd package compile -m speed -f ${package} > /dev/null 2>&1 #still needs optimization not ready yet.
+        cmd game mode performance ${package} > /dev/null 2>&1
+        cmd device_config put game_overlay ${package} mode=2,fps=60,downscaleFactor=0.7 > /dev/null 2>&1
+        opt_in_apps+="${package},"
     fi
-done
-   #Game Driver opt_in, Graphics System Driver opt_out , Developer Driver prerelease_opt_in
-   opt_in_apps=${opt_in_apps%,}
-   settings put global game_driver_opt_in_apps "$opt_in_apps"
-   cmd thermalservice override-status 0
-   cmd power set-fixed-performance-mode-enabled true
-   service call uimode 1
-   # dumpsys battery set level 1000 || dumpsys battery reset
-   pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS
+  done
+  opt_in_apps=${opt_in_apps%,}
+  settings put global game_driver_opt_in_apps "${opt_in_apps}" > /dev/null 2>&1
+  settings put global updatable_driver_production_opt_in_apps "${opt_in_apps}" > /dev/null 2>&1
+  cmd thermalservice override-status 0 > /dev/null 2>&1
+  cmd power set-fixed-performance-mode-enabled true > /dev/null 2>&1
+  pm grant by4a.setedit22 android.permission.WRITE_SECURE_SETTINGS > /dev/null 2>&1
+  pm trim-caches 1000G > /dev/null 2>&1
 }
-
 sleep 3s
-echo "[+] Installing Modules!"
+echo "[+] Flashing Modules!"
+sleep 0.5s
+echo "[+] Removing Bloatware..."
+sleep 0.5s
+echo "[+] Killing Unwanted Service..."
 sleep 1s
-echo "[+] Increasing Performance"
+echo "[!] Success!"
 sleep 0.5s
-echo "[+] Improving Max Framerate"
+echo "[+] Applying Game Drivers..."
 sleep 0.5s
-echo "[+] Disabling Throttling"
-sleep 2s
-echo "[+] Optimizing Device"
+echo "[+] Improving Network Speed..."
+sleep 0.5s
+echo "[+] Overclocking Device..."
 sleep 1s
-echo "[+] Removing Bloatwares"
+echo "[!] Success!"
 sleep 0.5s
-echo "[+] Killing Background Service"
-sleep 0.5s
-echo "[+] Applying Game Drivers"
-sleep 0.5s
-echo "[+] Improving Touch Response"
-sleep 0.5s
-echo "[+] Softening Touch Movement"
-sleep 0.5s
-echo "[+] Optimizing Touch Sensitivity"
+echo "[+] Finalizing..."
 (set_tweaks > /dev/null 2>&1 && echo "[!] Done!") || echo "[!] Failure!"
-
 sleep 1s
 echo "[!] Performance Mode!"
 sleep 1s
 echo "[!] Improved Gaming Experience!"
 echo "[!] Do not reboot!"
 echo ""
-
+screencap /sdcard/Pictures/Screenshot/1feedback.png  > /dev/null 2>&1
 cmd notification post -S bigtext 'status' "[+] PERFORMANCE MODE [+]" > /dev/null 2>&1
 sleep 10s
-am start -a android.intent.action.VIEW -d "https://www.facebook.com/reiko.dev" > /dev/null 2>&1
+am start -a android.intent.action.VIEW -d "https://t.me/hackersdecipher" > /dev/null 2>&1
