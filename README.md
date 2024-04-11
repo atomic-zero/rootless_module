@@ -33,6 +33,7 @@ This project aims to optimize device performance and enhance user experience by 
 ## Execution Guide
 
 1. **Install Brevent App:** Download and install Brevent from the Play Store.
+   [Wireless ADB Method](https://play.google.com/store/apps/details?id=me.piebridge.brevent).
 2. **Enable Wireless Debugging:** Open Brevent, enable wireless debugging, and note down the port address.
 3. **Apply Code to Brevent.**
 4. **Execute Script:** Run the following command in a terminal emulator or through ADB:
