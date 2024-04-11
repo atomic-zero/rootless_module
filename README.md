@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-This project aims to optimize device performance and enhance user experience by providing a script with various features such as performance optimization, rendering enhancement, bloatware removal, and more.
+This project aims to optimize device performance and enhance user experience without needing rooting your device applied using magisk instead we use brevent application and providing a script with various features such as performance optimization, rendering enhancement, bloatware removal, and more.
 
 ## Script Features
 
