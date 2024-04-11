@@ -1,0 +1,53 @@
+---
+
+Script Features:
+
+1. Performance Optimization: Enhances device speed.
+2. Rendering Enhancement: Improves graphics performance.
+3. Bloatware Removal: Removes unnecessary apps.
+4. Background Service Control: Limits background processes.
+5. Game Driver Optimization: Boosts gaming performance.
+6. Touch Response Improvement: Enhances touch sensitivity and smoothness.
+7. Optional: Customize Screen Resolution.
+8. NetSpeed Tweaks: Boosted Internet Speed.
+9. Overclock: Increased performance, allowing games to run smoother or at higher frame rates.
+10. Screen Refresh Rate: Unlock 120Hz.
+11. Private DNS Adblocker:
+Blocks Ads From Websites 7.24%
+12. Auto Clear Cache:
+Clear Cache All Applications.
+13. ZRAM ON/OFF TOGGLE
+-zram on/off
+14. Added Improvements Fixed Bug Features.
+15. Webdev Tools: Runs After Flashing
+16. Enhance Graphics
+17. Optimization
+
+
+🔗 [Download the Free version here](https://direct-link.net/1146400/rootless-module) 
+---
+
+Execution Guide:
+
+1. Install Brevent App: Download and install Brevent from the Play Store.
+2. Enable Wireless Debugging: Open Brevent, enable wireless debugging, and note down the port address.
+3. Apply Code to Brevent.
+4. Execute Script: Run the command below in a terminal emulator or through ADB:
+
+```shell
+sh /sdcard/Download/reiko.sh <widthxheight>```
+
+  Width and Height are optional.
+
+  after executing this command you don't need to reboot.
+
+  5. Restore to Normal Settings: To revert back to normal settings, execute:
+
+  ```shell
+  reboot```
+
+  ---
+
+  This script will enhance your device's performance, optimize various features, and provide options for customization.
+
+  Version: 1.7
