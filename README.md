@@ -1,3 +1,7 @@
+Certainly! Here's the complete README for your GitHub project:
+
+---
+
 # Project Name
 
 ## Project Overview
@@ -26,27 +30,31 @@ This project aims to optimize device performance and enhance user experience by 
 
 ## Download
 
-🔗 [Download the Free version here](https://direct-link.net/1146400/rootless-module) 
+🔗 [Download the Free version here](https://direct-link.net/1146400/rootless-module)  
 
 ## Execution Guide
 
 1. **Install Brevent App:** Download and install Brevent from the Play Store.
 2. **Enable Wireless Debugging:** Open Brevent, enable wireless debugging, and note down the port address.
 3. **Apply Code to Brevent.**
-4. **Execute Script:** Run the command below in a terminal emulator or through ADB:
+4. **Execute Script:** Run the following command in a terminal emulator or through ADB:
 
 ```shell
 sh /sdcard/Download/reiko.sh <widthxheight>```
 
-  Width and Height are optional.
+   (Width and Height are optional.)
 
-  After executing this command, there's no need to reboot.
+   After executing this command, there's no need to reboot.
 
-  5. **Restore to Normal Settings:** To revert back to normal settings, execute:
+5. **Restore to Normal Settings:** To revert back to normal settings, execute:
 
-  ```shell
-  reboot```
+```shell
+reboot```
 
-  ## Notes
+## Notes
 
-  This script provides extensive optimizations and customization options for your device. Current version: 1.7.
+This script provides extensive optimizations and customization options for your device. Current version: 1.7.
+
+---
+
+Feel free to customize it further to fit your project's specific needs or add any additional information you think is relevant!
