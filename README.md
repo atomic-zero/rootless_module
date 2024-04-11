@@ -2,7 +2,7 @@ Certainly! Here's the complete README for your GitHub project:
 
 ---
 
-# Project Name
+# ROOTLESS MODULE
 
 ## Project Overview
 
@@ -54,7 +54,3 @@ reboot```
 ## Notes
 
 This script provides extensive optimizations and customization options for your device. Current version: 1.7.
-
----
-
-Feel free to customize it further to fit your project's specific needs or add any additional information you think is relevant!
