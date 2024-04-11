@@ -1,5 +1,3 @@
-Sure, here's the revised README with the command enclosed in a code block:
-
 ---
 
 # ROOTLESS MODULE
