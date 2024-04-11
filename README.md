@@ -1,4 +1,4 @@
-Certainly! Here's the complete README for your GitHub project:
+Sure, here's the revised README with the command enclosed in a code block:
 
 ---
 
@@ -39,8 +39,9 @@ This project aims to optimize device performance and enhance user experience by 
 3. **Apply Code to Brevent.**
 4. **Execute Script:** Run the following command in a terminal emulator or through ADB:
 
-```shell
-sh /sdcard/Download/reiko.sh <widthxheight>```
+```bash
+sh /sdcard/Download/reiko.sh <widthxheight>
+```
 
    (Width and Height are optional.)
 
@@ -48,9 +49,12 @@ sh /sdcard/Download/reiko.sh <widthxheight>```
 
 5. **Restore to Normal Settings:** To revert back to normal settings, execute:
 
-```shell
-reboot```
+```bash
+reboot
+```
 
 ## Notes
 
 This script provides extensive optimizations and customization options for your device. Current version: 1.7.
+
+---
