@@ -1,10 +1,12 @@
-[ROOTLESS MODULE]
+---
+
+# ROOTLESS MODULE
 
 ## Project Overview
 
 This project aims to optimize device performance and enhance user experience without the need to root your device. We apply this using the Brevent application instead of Magisk, and provide a script with various features such as performance optimization, rendering enhancement, bloatware removal, and more.
 
-## Features
+## Script Features
 
 - Disturbance-Free Focus
 - Disabled Haptic Feedback
@@ -26,30 +28,32 @@ This project aims to optimize device performance and enhance user experience wit
 
 ## Download
 
-🔗 [Download the Free version here](https://direct-link.net/1146400/rootless-module)
+🔗 [Download the Free version here](https://direct-link.net/1146400/rootless-module)  
 
 ## Execution Guide
 
-1. Install Brevent App: Download and install Brevent from the Play Store.
+1. **Install Brevent App:** Download and install Brevent from the Play Store.
    [Wireless ADB Method](https://play.google.com/store/apps/details?id=me.piebridge.brevent).
-2. Enable Wireless Debugging: Open Brevent, enable wireless debugging, and note down the port address.
-3. Apply Code to Brevent.
-4. Execute Script: Run the following command in a terminal emulator or through ADB:
+2. **Enable Wireless Debugging:** Open Brevent, enable wireless debugging, and note down the port address.
+3. **Apply Code to Brevent.**
+4. **Execute Script:** Run the following command in a terminal emulator or through ADB:
 
 ```bash
-sh /sdcard/Download/reiko.sh <widthxheight>```
+sh /sdcard/Download/reiko.sh <widthxheight>
+```
 
    (Width and Height are optional.)
 
    After executing this command, there's no need to reboot.
 
-5. Restore to Normal Settings: To revert back to normal settings, execute:
+5. **Restore to Normal Settings:** To revert back to normal settings, execute:
 
 ```bash
-reboot```
-
-Or just turn off your device
+reboot
+```
 
 ## Notes
 
 This script provides extensive optimizations and customization options for your device. Current version: 1.8
+
+---
