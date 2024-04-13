@@ -52,6 +52,8 @@ sh /sdcard/Download/reiko.sh <widthxheight>
 reboot
 ```
 
+or just turn off your phone and turn it on again
+
 ## Notes
 
 This script provides extensive optimizations and customization options for your device. Current version: 1.8
