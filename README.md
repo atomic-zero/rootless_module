@@ -8,7 +8,7 @@ This project aims to optimize device performance and enhance user experience wit
 
 ## Script Features
 
-###Please note that device compatibility may vary.
+Please note that device features compatibility may vary.
 
 - Disturbance-Free Focus
 - Disabled Haptic Feedback
