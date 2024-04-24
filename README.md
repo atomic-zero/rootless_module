@@ -6,7 +6,7 @@
 
 This project aims to optimize device performance and enhance user experience without the need to root your device. We apply this using the Brevent application instead of Magisk, and provide a script with various features such as performance optimization, rendering enhancement, bloatware removal, and more.
 
-![Alt text](https://i.imgur.com/FuXy8Do.jpeg)
+![Alt text](https://www.imghippo.com/i/jXNBu1713930463.png)
 
 ## Script Features
 
